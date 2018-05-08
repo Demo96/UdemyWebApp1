@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using UdemyWebApp1.Models;
+using UdemyWebApp1.ViewModels;
 
 namespace UdemyWebApp.Controllers
 {
@@ -20,6 +21,16 @@ namespace UdemyWebApp.Controllers
         protected override void Dispose(bool disposing)
         {
             _context.Dispose();
+        }
+
+        public ActionResult New()
+        {
+            var membershipTypes = _context.MembershipTypes.ToList();
+            var viewModel = new NewCustomerViewModel
+            {
+                MembershipTypes = membershipTypes
+            };
+            return View(viewModel);
         }
 
         // GET: Customer

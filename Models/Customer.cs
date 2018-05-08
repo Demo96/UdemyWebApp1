@@ -14,7 +14,9 @@ namespace UdemyWebApp1.Models
         public String Name { get; set; }
         public bool IsSubscribedToNewsletter { get; set; }
         public MembershipType MembershipType { get; set; }
+        [Display(Name = "Membership type")]
         public short MembershipTypeId { get; set; }
+        [Display(Name="Date of birth")]
         public DateTime? Birthdate { get; set; }
     }
 }

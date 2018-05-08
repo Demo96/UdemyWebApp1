@@ -22,6 +22,8 @@ namespace UdemyWebApp1.Models
     { 
         public DbSet<Customer> Cutomers { get; set; }
         public DbSet<Movie> Movies { get; set; }
+        public DbSet<MembershipType> MembershipTypes { get; set; }
+
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
